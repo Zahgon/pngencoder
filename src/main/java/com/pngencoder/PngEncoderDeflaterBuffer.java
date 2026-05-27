@@ -6,8 +6,11 @@ import java.util.Objects;
 import java.util.zip.Adler32;
 
 class PngEncoderDeflaterBuffer {
+
     final PngEncoderDeflaterBufferPool pool;
+
     final byte[] bytes;
+
     int length;
 
     PngEncoderDeflaterBuffer(PngEncoderDeflaterBufferPool pool, int maxLength) {
@@ -17,16 +20,14 @@ class PngEncoderDeflaterBuffer {
     }
 
     void giveBack() {
-        pool.giveBack(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     long calculateAdler32() {
-        Adler32 adler32 = new Adler32();
-        adler32.update(bytes, 0, length);
-        return adler32.getValue();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     void write(OutputStream outputStream) throws IOException {
-        outputStream.write(bytes, 0, length);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

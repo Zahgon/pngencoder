@@ -3,6 +3,7 @@ package com.pngencoder;
 import java.awt.image.BufferedImage;
 
 public enum PngEncoderBufferedImageType {
+
     TYPE_CUSTOM,
     TYPE_INT_RGB,
     TYPE_INT_ARGB,
@@ -19,15 +20,15 @@ public enum PngEncoderBufferedImageType {
     TYPE_BYTE_INDEXED;
 
     public static PngEncoderBufferedImageType valueOf(int bufferedImageTypeOrdinal) {
-        return values()[bufferedImageTypeOrdinal];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static PngEncoderBufferedImageType valueOf(BufferedImage bufferedImage) {
-        return valueOf(bufferedImage.getType());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return name() + "#" + ordinal();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

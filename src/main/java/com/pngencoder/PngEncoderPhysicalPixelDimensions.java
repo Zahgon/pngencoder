@@ -11,8 +11,8 @@ package com.pngencoder;
 public class PngEncoderPhysicalPixelDimensions {
 
     public enum Unit {
-        UNKNOWN((byte) 0),
-        METER((byte) 1);
+
+        UNKNOWN((byte) 0), METER((byte) 1);
 
         private final byte value;
 
@@ -21,14 +21,16 @@ public class PngEncoderPhysicalPixelDimensions {
         }
 
         public byte getValue() {
-            return value;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     private static final float INCHES_PER_METER = 100 / 2.54f;
 
     private final int pixelsPerUnitX;
+
     private final int pixelsPerUnitY;
+
     private final Unit unit;
 
     private PngEncoderPhysicalPixelDimensions(int pixelsPerUnitX, int pixelsPerUnitY, Unit unit) {
@@ -45,7 +47,7 @@ public class PngEncoderPhysicalPixelDimensions {
      * @param pixelsPerMeterY the pixels per meter value for the vertical dimension
      */
     public static PngEncoderPhysicalPixelDimensions pixelsPerMeter(int pixelsPerMeterX, int pixelsPerMeterY) {
-        return new PngEncoderPhysicalPixelDimensions(pixelsPerMeterX, pixelsPerMeterY, Unit.METER);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -55,7 +57,7 @@ public class PngEncoderPhysicalPixelDimensions {
      * @param pixelsPerMeter the pixels per meter value for both dimensions
      */
     public static PngEncoderPhysicalPixelDimensions pixelsPerMeter(int pixelsPerMeter) {
-        return pixelsPerMeter(pixelsPerMeter, pixelsPerMeter);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -69,10 +71,7 @@ public class PngEncoderPhysicalPixelDimensions {
      * @param dotsPerInchY the DPI value for the vertical dimension
      */
     public static PngEncoderPhysicalPixelDimensions dotsPerInch(int dotsPerInchX, int dotsPerInchY) {
-        int pixelsPerMeterX = Math.round(dotsPerInchX * INCHES_PER_METER);
-        int pixelsPerMeterY = Math.round(dotsPerInchY * INCHES_PER_METER);
-
-        return new PngEncoderPhysicalPixelDimensions(pixelsPerMeterX, pixelsPerMeterY, Unit.METER);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -85,7 +84,7 @@ public class PngEncoderPhysicalPixelDimensions {
      * @param dotsPerInch the DPI value for both dimensions
      */
     public static PngEncoderPhysicalPixelDimensions dotsPerInch(int dotsPerInch) {
-        return dotsPerInch(dotsPerInch, dotsPerInch);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -96,27 +95,27 @@ public class PngEncoderPhysicalPixelDimensions {
      * @param pixelsPerUnitY the number of pixels per unit in the vertical dimension
      */
     public static PngEncoderPhysicalPixelDimensions aspectRatio(int pixelsPerUnitX, int pixelsPerUnitY) {
-        return new PngEncoderPhysicalPixelDimensions(pixelsPerUnitX, pixelsPerUnitY, Unit.UNKNOWN);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return the number of pixels per unit in the horizontal dimension
      */
     public int getPixelsPerUnitX() {
-        return pixelsPerUnitX;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return the number of pixels per unit in the vertical dimension
      */
     public int getPixelsPerUnitY() {
-        return pixelsPerUnitY;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return the unit of the pixel size (either {@link Unit#METER} or {@link Unit#UNKNOWN})
      */
     public Unit getUnit() {
-        return unit;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

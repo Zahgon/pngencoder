@@ -4,7 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class PngEncoderDeflaterBufferPool {
+
     private final int bufferMaxLength;
+
     protected final Queue<PngEncoderDeflaterBuffer> buffers;
 
     PngEncoderDeflaterBufferPool(int bufferMaxLength) {
@@ -13,23 +15,18 @@ class PngEncoderDeflaterBufferPool {
     }
 
     public int getBufferMaxLength() {
-        return bufferMaxLength;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     PngEncoderDeflaterBuffer borrow() {
-        PngEncoderDeflaterBuffer buffer = buffers.poll();
-        if (buffer == null) {
-            buffer = new PngEncoderDeflaterBuffer(this, bufferMaxLength);
-        }
-        return buffer;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     void giveBack(PngEncoderDeflaterBuffer buffer) {
-        buffer.length = 0;
-        buffers.offer(buffer);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     int size() {
-        return buffers.size();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

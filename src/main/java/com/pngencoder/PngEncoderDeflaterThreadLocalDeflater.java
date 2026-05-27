@@ -9,10 +9,11 @@ import java.util.zip.Deflater;
  * Resetting an existing Deflater instance is almost free though.
  */
 class PngEncoderDeflaterThreadLocalDeflater {
+
     private static final ThreadLocal<PngEncoderDeflaterThreadLocalDeflater> THREAD_LOCAL = ThreadLocal.withInitial(PngEncoderDeflaterThreadLocalDeflater::new);
 
     static Deflater getInstance(int compressionLevel) {
-        return THREAD_LOCAL.get().getDeflater(compressionLevel);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private final Deflater[] deflaters;

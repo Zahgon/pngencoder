@@ -17,6 +17,7 @@ import java.util.zip.Deflater;
  * PngEncoder is a really fast encoder for PNG images in Java.
  */
 public class PngEncoder {
+
     /**
      * Compression level 9 is the default.
      * <p>
@@ -25,17 +26,20 @@ public class PngEncoder {
     public static int DEFAULT_COMPRESSION_LEVEL = Deflater.BEST_COMPRESSION;
 
     private final BufferedImage bufferedImage;
+
     private final int compressionLevel;
+
     private final boolean multiThreadedCompressionEnabled;
+
     private final PngEncoderSrgbRenderingIntent srgbRenderingIntent;
+
     private final PngEncoderPhysicalPixelDimensions physicalPixelDimensions;
 
     private final boolean usePredictorEncoding;
+
     private final boolean tryIndexedEncoding;
 
-    private PngEncoder(BufferedImage bufferedImage, int compressionLevel, boolean multiThreadedCompressionEnabled,
-            PngEncoderSrgbRenderingIntent srgbRenderingIntent,
-            PngEncoderPhysicalPixelDimensions physicalPixelDimensions, boolean usePredictorEncoding, boolean tryIndexedEncoding) {
+    private PngEncoder(BufferedImage bufferedImage, int compressionLevel, boolean multiThreadedCompressionEnabled, PngEncoderSrgbRenderingIntent srgbRenderingIntent, PngEncoderPhysicalPixelDimensions physicalPixelDimensions, boolean usePredictorEncoding, boolean tryIndexedEncoding) {
         this.bufferedImage = bufferedImage;
         this.compressionLevel = PngEncoderVerificationUtil.verifyCompressionLevel(compressionLevel);
         this.multiThreadedCompressionEnabled = multiThreadedCompressionEnabled;
@@ -60,8 +64,7 @@ public class PngEncoder {
      * @return a new PngEncoder
      */
     public PngEncoder withBufferedImage(BufferedImage bufferedImage) {
-        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent,
-                physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -72,8 +75,7 @@ public class PngEncoder {
      * @return a new PngEncoder
      */
     public PngEncoder withCompressionLevel(int compressionLevel) {
-        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent,
-                physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -84,8 +86,7 @@ public class PngEncoder {
      * @return a new PngEncoder
      */
     public PngEncoder withTryIndexedEncoding(boolean tryIndexedEncoding) {
-        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent,
-                physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -99,8 +100,7 @@ public class PngEncoder {
      */
     @Deprecated
     public PngEncoder withMultiThreadedCompressionEnabled(boolean multiThreadedCompressionEnabled) {
-        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent,
-                physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
+        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent, physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
     }
 
     /**
@@ -109,8 +109,7 @@ public class PngEncoder {
      * @return a new PngEncoder
      */
     public PngEncoder withMultiThreadedCompressionDisabled() {
-        return new PngEncoder(bufferedImage, compressionLevel, false, srgbRenderingIntent,
-                physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -121,13 +120,11 @@ public class PngEncoder {
      * @return a new PngEncoder
      */
     public PngEncoder withSrgbRenderingIntent(PngEncoderSrgbRenderingIntent srgbRenderingIntent) {
-        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent,
-                physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public PngEncoder withPhysicalPixelDimensions(PngEncoderPhysicalPixelDimensions physicalPixelDimensions) {
-        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent,
-                physicalPixelDimensions, usePredictorEncoding, tryIndexedEncoding);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -138,32 +135,30 @@ public class PngEncoder {
      * @return a new PngEncoder
      */
     public PngEncoder withPredictorEncoding(boolean usePredictorEncoding) {
-        return new PngEncoder(bufferedImage, compressionLevel, multiThreadedCompressionEnabled, srgbRenderingIntent,
-                physicalPixelDimensions,
-                usePredictorEncoding, tryIndexedEncoding);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public BufferedImage getBufferedImage() {
-        return bufferedImage;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return true if the predictor encoding is enabled.
      */
     public boolean isPredictorEncodingEnabled() {
-        return usePredictorEncoding;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public int getCompressionLevel() {
-        return compressionLevel;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public boolean isMultiThreadedCompressionEnabled() {
-        return multiThreadedCompressionEnabled;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public PngEncoderSrgbRenderingIntent getSrgbRenderingIntent() {
-        return srgbRenderingIntent;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -174,13 +169,7 @@ public class PngEncoder {
      * @throws NullPointerException if the image has not been set.
      */
     public int toStream(OutputStream outputStream) {
-        try {
-            return PngEncoderLogic.encode(bufferedImage, outputStream, compressionLevel,
-                    multiThreadedCompressionEnabled, srgbRenderingIntent, physicalPixelDimensions,
-                    isPredictorEncodingEnabled(), tryIndexedEncoding);
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -192,11 +181,7 @@ public class PngEncoder {
      * @throws UncheckedIOException instead of IOException
      */
     public int toFile(Path filePath) {
-        try (OutputStream outputStream = Files.newOutputStream(filePath)) {
-            return toStream(outputStream);
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -208,7 +193,7 @@ public class PngEncoder {
      * @throws UncheckedIOException instead of IOException
      */
     public int toFile(File file) {
-        return toFile(file.toPath());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -220,7 +205,7 @@ public class PngEncoder {
      * @throws UncheckedIOException instead of IOException
      */
     public int toFile(String fileName) {
-        return toFile(Paths.get(fileName));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -230,8 +215,6 @@ public class PngEncoder {
      * @throws NullPointerException if the image has not been set.
      */
     public byte[] toBytes() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream(64 * 1024);
-        toStream(outputStream);
-        return outputStream.toByteArray();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

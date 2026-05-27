@@ -202,3 +202,8 @@ $RECYCLE.BIN/
 .dropbox
 .dropbox.attr
 .dropbox.cache
+
+.aider*
+logs/
+.commit0_scripts/
+.github/workflows/

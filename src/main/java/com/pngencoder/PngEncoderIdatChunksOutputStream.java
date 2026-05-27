@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.zip.CRC32;
 
 class PngEncoderIdatChunksOutputStream extends FilterOutputStream {
+
     static final byte[] IDAT_BYTES = "IDAT".getBytes(StandardCharsets.US_ASCII);
 
     // An IDAT chunk adds 12 bytes of overhead to the data within.
@@ -14,7 +15,9 @@ class PngEncoderIdatChunksOutputStream extends FilterOutputStream {
     static final int DEFAULT_BUFFER_LENGTH = 32 * 1024;
 
     private final CRC32 crc;
+
     private final byte[] buf;
+
     private int count;
 
     PngEncoderIdatChunksOutputStream(OutputStream out, int bufferLength) {
@@ -30,35 +33,22 @@ class PngEncoderIdatChunksOutputStream extends FilterOutputStream {
 
     @Override
     public void write(int b) throws IOException {
-        if (count >= buf.length) {
-            flushBuffer();
-        }
-        buf[count++] = (byte)b;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void write(byte[] b) throws IOException {
-        write(b, 0, b.length);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
-        if (len >= buf.length) {
-            flushBuffer();
-            writeIdatChunk(b, off, len);
-            return;
-        }
-        if (len > buf.length - count) {
-            flushBuffer();
-        }
-        System.arraycopy(b, off, buf, count, len);
-        count += len;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void flush() throws IOException {
-        flushBuffer();
-        super.flush();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private void flushBuffer() throws IOException {

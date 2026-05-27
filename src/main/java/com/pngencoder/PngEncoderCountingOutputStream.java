@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.util.Objects;
 
 class PngEncoderCountingOutputStream extends FilterOutputStream {
+
     private int count;
 
     PngEncoderCountingOutputStream(OutputStream out) {
@@ -13,18 +14,16 @@ class PngEncoderCountingOutputStream extends FilterOutputStream {
     }
 
     public int getCount() {
-        return count;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
-        out.write(b, off, len);
-        count += len;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void write(int b) throws IOException {
-        out.write(b);
-        count++;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }
